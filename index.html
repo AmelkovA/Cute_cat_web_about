@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Cute Cat — CUCAT | Мемкоин экосистема</title>
-    <!-- Google Fonts & Simple Icons -->
+    <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -175,10 +175,6 @@
             flex: 1.2;
             min-width: 300px;
         }
-        .address-panel {
-            flex: 1.8;
-            min-width: 340px;
-        }
         .currency-select {
             width: 100%;
             padding: 1.2rem 1.5rem;
@@ -195,16 +191,6 @@
             padding: 1.3rem 1.8rem;
             margin: 1.2rem 0;
             font-size: 1.1rem;
-            border-left: 6px solid #ff9eb6;
-        }
-        .address-box {
-            background: #fef2f5;
-            padding: 1.2rem 1.5rem;
-            border-radius: 36px;
-            word-break: break-all;
-            font-family: monospace;
-            font-size: 1rem;
-            margin: 0.9rem 0;
             border-left: 6px solid #ff9eb6;
         }
         .tokenomics-table {
@@ -297,6 +283,10 @@
         .cat-icon-deco {
             font-size: 1.3rem;
         }
+        /* скрываем старые блоки с адресами */
+        .hidden-address-block {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -322,7 +312,7 @@
         <p data-key="about_text">Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.</p>
     </div>
 
-    <!-- БЛОК ПОКУПКИ ТОКЕНОВ (только покупка, адреса для поддержки удалены полностью) -->
+    <!-- БЛОК ПОКУПКИ ТОКЕНОВ (полностью убраны все адреса и блоки "Accepted networks" и "Send funds to") -->
     <div class="card">
         <h2><i class="fas fa-coins"></i> <span data-key="buy_title">Buy CUCAT tokens</span></h2>
         <div class="token-buy-grid">
@@ -352,19 +342,8 @@
                 <div class="info-note">
                     <i class="fas fa-chart-line"></i> <span data-key="revenue_info">Revenue from token sales will go to app development, marketing, early user rewards, and charitable initiatives to bring more cats into the world for petting.</span>
                 </div>
-                <!-- ТОЛЬКО АДРЕС ДЛЯ ОПЛАТЫ В ЗАВИСИМОСТИ ОТ ВАЛЮТЫ (без дополнительных просьб о поддержке) -->
-                <div id="dynamicAddressBox" class="address-box">
-                    <i class="fas fa-paper-plane"></i> <strong><span data-key="send_to">💸 Send funds to this address:</span></strong><br>
-                    <span id="selectedAddress" style="font-weight:600;">bc1qe8p9gqqvn8e3yfhjxkusvc0phnflznpzprqd8f</span>
-                </div>
-            </div>
-            <div class="address-panel">
-                <h3><i class="fas fa-list-ul"></i> <span data-key="all_addresses">Accepted networks & addresses</span></h3>
-                <div class="address-box"><strong>BTC:</strong> bc1qe8p9gqqvn8e3yfhjxkusvc0phnflznpzprqd8f</div>
-                <div class="address-box"><strong>ETH / BSC:</strong> 0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b</div>
-                <div class="address-box"><strong>SOL:</strong> 8RU4kt7kwH4eLqgq8RAvwUDj46hUBFFH9MPSiw999gwB</div>
-                <div class="address-box"><strong>TRON (TRC20):</strong> TWp92WuYAEZzu3ur43ZhZEvMBVd65hJMmA</div>
-                <div class="info-note"><i class="fas fa-gift"></i> <span data-key="early_note">⭐ Ambassador program participants and early supporters will receive tokens before listing at 0.5 USDT per CUCAT.</span></div>
+                
+                <!-- ВСЕ БЛОКИ С АДРЕСАМИ УДАЛЕНЫ: нет ни "Send funds to", ни "Accepted networks & addresses" -->
             </div>
         </div>
     </div>
@@ -374,8 +353,7 @@
         <h2><i class="fas fa-chart-pie"></i> <span data-key="tokenomics_title">Tokenomics CUCAT</span></h2>
         <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000,000 Cute_cat (CUCAT)</strong></p>
         <table class="tokenomics-table">
-            <thead>运转<th><span data-key="category">Category</span></th><th><span data-key="percent">Percent</span></th><th><span data-key="purpose">Purpose</span></th></tr>
-            </thead>
+            <thead><tr><th><span data-key="category">Category</span></th><th><span data-key="percent">Percent</span></th><th><span data-key="purpose">Purpose</span></th></tr></thead>
             <tbody>
                 <tr><td>Community & Rewards</td><td>25%</td><td data-key="comm_desc">User rewards, missions, activity, retention</td></tr>
                 <tr><td>Liquidity</td><td>20%</td><td data-key="liq_desc">Liquidity and market stability</td></tr>
@@ -412,7 +390,7 @@
         <div id="collabMsg" style="margin-top:16px;"></div>
     </div>
 
-    <!-- РАЗДЕЛ ПОДДЕРЖАТЬ ПРОЕКТ (ТОЛЬКО ЗДЕСЬ ВСЕ АДРЕСА И ПРОСЬБЫ) -->
+    <!-- РАЗДЕЛ ПОДДЕРЖАТЬ ПРОЕКТ (ТОЛЬКО ЗДЕСЬ ВСЕ АДРЕСА) -->
     <div class="support-section">
         <i class="fas fa-heart" style="color:#ff8aa8; font-size:1.6rem;"></i> 
         <h3 style="font-size:1.7rem; margin:0.5rem 0 0.3rem;"><span data-key="support_title">🐾 Support Cute_cat project</span></h3>
@@ -444,9 +422,6 @@
             listing_date_msg: "📅 Free trading (listing) is scheduled for December 1, 2026.",
             early_access_msg: "✨ You can get tokens earlier! Follow the news and join the ambassador program to become an early holder at the special price of 0.5 USDT per token.",
             revenue_info: "Revenue from token sales will go to app development, marketing, early user rewards, and charitable initiatives to bring more cats into the world for petting.",
-            send_to: "💸 Send funds to this address:",
-            all_addresses: "Accepted networks & addresses",
-            early_note: "⭐ Ambassador program participants and early supporters will receive tokens before listing at 0.5 USDT per CUCAT.",
             tokenomics_title: "Tokenomics CUCAT",
             total_supply: "Total supply:",
             category: "Category",
@@ -484,9 +459,6 @@
             listing_date_msg: "📅 Свободная продажа (листинг) запланирована на 01.12.2026.",
             early_access_msg: "✨ Токен можно получить и раньше! Следите за новостями и участвуйте в амбассадорской программе, чтобы попасть в число ранних холдеров по специальной цене 0,5 USDT за токен.",
             revenue_info: "Выручка от продажи токенов пойдет на доработку приложения, маркетинг, поощрение ранних пользователей и благотворительные инициативы, чтобы в мире было больше котиков для поглаживания.",
-            send_to: "💸 Отправить средства на этот адрес:",
-            all_addresses: "Принимаемые сети и адреса",
-            early_note: "⭐ Участники амбассадорской программы и ранние сторонники получат токены до листинга по 0.5 USDT за CUCAT.",
             tokenomics_title: "Токеномика CUCAT",
             total_supply: "Общее предложение:",
             category: "Категория",
@@ -534,7 +506,7 @@
     document.getElementById('langEnBtn').addEventListener('click', () => updateLanguage('en'));
     document.getElementById('langRuBtn').addEventListener('click', () => updateLanguage('ru'));
 
-    // кошелек
+    // кошелек (без изменений)
     document.getElementById('connectWalletBtn').addEventListener('click', () => {
         const choice = confirm("🔌 Choose wallet connection:\nOK → MetaMask\nCancel → WalletConnect");
         if (choice) {
@@ -549,27 +521,6 @@
             alert("🌐 WalletConnect modal (demo)");
         }
     });
-
-    // адреса для покупки
-    const addressMap = {
-        BTC: "bc1qe8p9gqqvn8e3yfhjxkusvc0phnflznpzprqd8f",
-        ETH: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b",
-        BNB: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b",
-        SOL: "8RU4kt7kwH4eLqgq8RAvwUDj46hUBFFH9MPSiw999gwB",
-        USDT_ERC: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b",
-        USDC_ERC: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b",
-        USDT_TRC: "TWp92WuYAEZzu3ur43ZhZEvMBVd65hJMmA",
-        USDC_TRC: "TWp92WuYAEZzu3ur43ZhZEvMBVd65hJMmA",
-        USDT_SOL: "8RU4kt7kwH4eLqgq8RAvwUDj46hUBFFH9MPSiw999gwB",
-        USDC_SOL: "8RU4kt7kwH4eLqgq8RAvwUDj46hUBFFH9MPSiw999gwB",
-        USDT_BSC: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b",
-        USDC_BSC: "0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b"
-    };
-    const currencySelect = document.getElementById('currencySelect');
-    const addressSpan = document.getElementById('selectedAddress');
-    function updateAddress() { addressSpan.innerText = addressMap[currencySelect.value] || addressMap.BTC; }
-    currencySelect.addEventListener('change', updateAddress);
-    updateAddress();
 
     // формы отправки
     const ambassadorForm = document.getElementById('ambassadorForm');
