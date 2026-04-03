@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* фон с котиками (полупрозрачные силуэты) */
+        /* фон с котиками */
         body::before {
             content: "🐱 🐈 🐾 🐱 🐈 🐾 🐱 🐈 🐾 🐱 🐈 🐾 🐱";
             font-size: 180px;
@@ -55,8 +55,7 @@
             z-index: 2;
         }
 
-        /* крупный читабельный текст */
-        p, li, .info-note, .address-box, .form-group input, .form-group textarea, .currency-select, .support-section p, .support-address {
+        p, li, .info-note, .form-group input, .form-group textarea, .currency-select, .support-section p, .support-address {
             font-size: 1.15rem;
         }
         h2 {
@@ -102,7 +101,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-app, .lang-btn, .wallet-btn {
+        .btn-app, .lang-btn, .wallet-btn, .social-btn {
             border: none;
             background: white;
             padding: 0.8rem 1.9rem;
@@ -139,6 +138,19 @@
             background: #ffe0b5;
             color: #a54f2c;
         }
+        .social-btn {
+            background: #e1e8f0;
+            color: #1DA1F2;
+            gap: 8px;
+        }
+        .social-btn i {
+            font-size: 1.3rem;
+        }
+        .social-btn:hover {
+            background: #1DA1F2;
+            color: white;
+            transform: scale(0.97);
+        }
         .logo-area {
             display: flex;
             align-items: center;
@@ -164,47 +176,8 @@
             color: transparent;
         }
 
-        .token-buy-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            justify-content: space-between;
+        .presale-form {
             margin-top: 1.5rem;
-        }
-        .buy-panel {
-            flex: 1.2;
-            min-width: 300px;
-        }
-        .currency-select {
-            width: 100%;
-            padding: 1.2rem 1.5rem;
-            border-radius: 70px;
-            border: 1px solid #ffbfcf;
-            background: white;
-            font-weight: 500;
-            margin: 1.2rem 0;
-            font-size: 1.1rem;
-        }
-        .info-note {
-            background: #fff0f3;
-            border-radius: 40px;
-            padding: 1.3rem 1.8rem;
-            margin: 1.2rem 0;
-            font-size: 1.1rem;
-            border-left: 6px solid #ff9eb6;
-        }
-        .tokenomics-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fffbfc;
-            border-radius: 32px;
-            overflow: hidden;
-            font-size: 1.1rem;
-        }
-        .tokenomics-table th, .tokenomics-table td {
-            padding: 18px 14px;
-            text-align: left;
-            border-bottom: 1px solid #ffe2ea;
         }
         .form-group {
             margin-bottom: 1.6rem;
@@ -236,6 +209,27 @@
             align-items: center;
             gap: 8px;
         }
+        .info-note {
+            background: #fff0f3;
+            border-radius: 40px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.2rem 0;
+            font-size: 1.1rem;
+            border-left: 6px solid #ff9eb6;
+        }
+        .tokenomics-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fffbfc;
+            border-radius: 32px;
+            overflow: hidden;
+            font-size: 1.1rem;
+        }
+        .tokenomics-table th, .tokenomics-table td {
+            padding: 18px 14px;
+            text-align: left;
+            border-bottom: 1px solid #ffe2ea;
+        }
         .support-section {
             margin-top: 2rem;
             text-align: center;
@@ -264,6 +258,25 @@
             padding: 2rem 1rem 1rem;
             color: #b56f88;
             font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .footer-social a {
+            color: #b56f88;
+            font-size: 1.6rem;
+            transition: 0.2s;
+        }
+        .footer-social a:hover {
+            color: #1DA1F2;
+            transform: scale(1.1);
         }
         @media (max-width: 800px) {
             .container { padding: 1.2rem; }
@@ -280,25 +293,29 @@
             padding: 0.2rem 0.6rem;
             font-weight: bold;
         }
-        .cat-icon-deco {
-            font-size: 1.3rem;
+        .two-columns {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
-        /* скрываем старые блоки с адресами */
-        .hidden-address-block {
-            display: none;
+        .two-columns > div {
+            flex: 1;
+            min-width: 260px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- HEADER -->
+    <!-- HEADER с добавленной кнопкой Twitter -->
     <div class="header">
         <div class="left-group">
             <a href="https://amelkova.github.io/Cute_cat_web/" target="_blank" class="btn-app"><i class="fas fa-cat"></i> <span data-key="app_btn">App</span></a>
             <button id="langEnBtn" class="lang-btn active">🇬🇧 EN</button>
             <button id="langRuBtn" class="lang-btn">🇷🇺 RU</button>
             <button id="connectWalletBtn" class="wallet-btn"><i class="fas fa-wallet"></i> <span data-key="connect_wallet">Connect wallet</span></button>
+            <!-- ВИДИМАЯ КНОПКА TWITTER / X -->
+            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" class="social-btn"><i class="fab fa-twitter"></i> <span data-key="twitter_btn">Twitter</span></a>
         </div>
         <div class="logo-area">
             <div class="cat-logo"><i class="fas fa-cat"></i></div>
@@ -306,52 +323,51 @@
         </div>
     </div>
 
-    <!-- ОПИСАНИЕ ПРОЕКТА -->
+    <!-- ОПИСАНИЕ ПРОЕКТА (с добавлением про ИИ, блокчейн и доброту котиков) -->
     <div class="card">
         <h2><i class="fas fa-paw"></i> <span data-key="about_title">Cute_cat — мемкоин-экосистема</span></h2>
         <p data-key="about_text">Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.</p>
+        <p style="margin-top: 1rem; background: #ffeef4; padding: 1rem; border-radius: 40px;"><i class="fas fa-robot"></i> <strong data-key="ai_blockchain">Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.</strong></p>
     </div>
 
-    <!-- БЛОК ПОКУПКИ ТОКЕНОВ (полностью убраны все адреса и блоки "Accepted networks" и "Send funds to") -->
+    <!-- БЛОК ПРЕСЕЙЛА: форма заявки на участие в пресейле -->
     <div class="card">
-        <h2><i class="fas fa-coins"></i> <span data-key="buy_title">Buy CUCAT tokens</span></h2>
-        <div class="token-buy-grid">
-            <div class="buy-panel">
-                <label><span data-key="choose_currency">Choose currency for early access / pre-sale:</span></label>
-                <select id="currencySelect" class="currency-select">
-                    <option value="BTC">BTC (Bitcoin)</option>
-                    <option value="ETH">ETH (Ethereum)</option>
-                    <option value="BNB">BNB (BSC)</option>
-                    <option value="SOL">SOL (Solana)</option>
-                    <option value="USDT_ERC">USDT (ERC-20)</option>
-                    <option value="USDC_ERC">USDC (ERC-20)</option>
-                    <option value="USDT_TRC">USDT (TRC-20)</option>
-                    <option value="USDC_TRC">USDC (TRC-20)</option>
-                    <option value="USDT_SOL">USDT (SOL)</option>
-                    <option value="USDC_SOL">USDC (SOL)</option>
-                    <option value="USDT_BSC">USDT (BSC)</option>
-                    <option value="USDC_BSC">USDC (BSC)</option>
-                </select>
-                
-                <!-- сообщение о листинге и раннем доступе -->
+        <h2><i class="fas fa-rocket"></i> <span data-key="presale_title">Early presale participation</span></h2>
+        <div class="two-columns">
+            <div>
                 <div class="info-note" style="background: #fff0e0;">
                     <i class="fas fa-calendar-alt"></i> <strong><span data-key="listing_date_msg">📅 Free trading (listing) is scheduled for December 1, 2026.</span></strong><br>
-                    <span data-key="early_access_msg">✨ You can get tokens earlier! Follow the news and join the ambassador program to become an early holder at the special price of 0.5 USDT per token.</span>
+                    <span data-key="early_access_msg">✨ You can get tokens earlier! Leave a request below to join the presale with a 50% discount from the listing price (0.5 USDT per token instead of 1 USDT).</span>
                 </div>
-
                 <div class="info-note">
                     <i class="fas fa-chart-line"></i> <span data-key="revenue_info">Revenue from token sales will go to app development, marketing, early user rewards, and charitable initiatives to bring more cats into the world for petting.</span>
                 </div>
-                
-                <!-- ВСЕ БЛОКИ С АДРЕСАМИ УДАЛЕНЫ: нет ни "Send funds to", ни "Accepted networks & addresses" -->
+            </div>
+            <div>
+                <div class="presale-form">
+                    <h3 style="margin-top:0;"><i class="fas fa-pen-alt"></i> <span data-key="presale_form_title">Apply for presale (50% discount)</span></h3>
+                    <form id="presaleForm">
+                        <div class="form-group">
+                            <input type="text" id="presaleName" placeholder="Your name / Имя" data-placeholder-key="name_placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="presaleTelegram" placeholder="Telegram @username or phone / ник в Telegram" data-placeholder-key="telegram_placeholder" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="presaleAmount" placeholder="Number of tokens you want to purchase (min 100) / Количество токенов" data-placeholder-key="tokens_placeholder" min="100" step="100" required>
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fas fa-ticket-alt"></i> <span data-key="send_presale">Send presale request</span></button>
+                    </form>
+                    <div id="presaleMsg" style="margin-top:16px; font-size:0.9rem;"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ТОКЕНОМИКА -->
+    <!-- ТОКЕНОМИКА (общее предложение 1 000 000 000) -->
     <div class="card">
         <h2><i class="fas fa-chart-pie"></i> <span data-key="tokenomics_title">Tokenomics CUCAT</span></h2>
-        <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000,000 Cute_cat (CUCAT)</strong></p>
+        <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000 Cute_cat (CUCAT)</strong> <span style="font-size:0.9rem;">(one billion)</span></p>
         <table class="tokenomics-table">
             <thead><tr><th><span data-key="category">Category</span></th><th><span data-key="percent">Percent</span></th><th><span data-key="purpose">Purpose</span></th></tr></thead>
             <tbody>
@@ -390,7 +406,7 @@
         <div id="collabMsg" style="margin-top:16px;"></div>
     </div>
 
-    <!-- РАЗДЕЛ ПОДДЕРЖАТЬ ПРОЕКТ (ТОЛЬКО ЗДЕСЬ ВСЕ АДРЕСА) -->
+    <!-- РАЗДЕЛ ПОДДЕРЖАТЬ ПРОЕКТ -->
     <div class="support-section">
         <i class="fas fa-heart" style="color:#ff8aa8; font-size:1.6rem;"></i> 
         <h3 style="font-size:1.7rem; margin:0.5rem 0 0.3rem;"><span data-key="support_title">🐾 Support Cute_cat project</span></h3>
@@ -405,7 +421,10 @@
     </div>
 
     <footer>
-        <i class="fas fa-cat"></i> Cute_cat — pet a cat, be happy 🐾  <span data-key="footer_txt">© 2025 CUCAT ecosystem</span>
+        <div class="footer-social">
+            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div><i class="fas fa-cat"></i> Cute_cat — pet a cat, be happy 🐾  <span data-key="footer_txt">© 2025 CUCAT ecosystem</span></div>
     </footer>
 </div>
 
@@ -415,13 +434,15 @@
         en: {
             app_btn: "App",
             connect_wallet: "Connect wallet",
+            twitter_btn: "Twitter",
             about_title: "Cute_cat — meme coin ecosystem",
             about_text: "Cute_cat is a meme coin ecosystem built around cat petting culture, emotional comfort, and digital pleasure. Our mission is to develop the habit of petting cats as a simple, natural, and enjoyable ritual that improves human well-being and creates a positive user experience.",
-            buy_title: "Buy CUCAT tokens",
-            choose_currency: "Choose currency for early access / pre-sale:",
+            ai_blockchain: "Cute_cat is a project that uses artificial intelligence, blockchain technology, and cat kindness to make the world a better place.",
+            presale_title: "Early presale participation",
             listing_date_msg: "📅 Free trading (listing) is scheduled for December 1, 2026.",
-            early_access_msg: "✨ You can get tokens earlier! Follow the news and join the ambassador program to become an early holder at the special price of 0.5 USDT per token.",
+            early_access_msg: "✨ You can get tokens earlier! Leave a request below to join the presale with a 50% discount from the listing price (0.5 USDT per token instead of 1 USDT).",
             revenue_info: "Revenue from token sales will go to app development, marketing, early user rewards, and charitable initiatives to bring more cats into the world for petting.",
+            presale_form_title: "Apply for presale (50% discount)",
             tokenomics_title: "Tokenomics CUCAT",
             total_supply: "Total supply:",
             category: "Category",
@@ -445,20 +466,24 @@
             footer_txt: "© 2025 CUCAT ecosystem",
             name_placeholder: "Your name / Nickname",
             telegram_placeholder: "Telegram @username or phone number",
+            tokens_placeholder: "Number of tokens (min 100) — 0.5 USDT each",
             org_name_placeholder: "Your name / Organization name",
             email_placeholder: "Email for reply",
-            proposal_placeholder: "Your proposal: ideas to help cats or collaboration"
+            proposal_placeholder: "Your proposal: ideas to help cats or collaboration",
+            send_presale: "Send presale request"
         },
         ru: {
             app_btn: "Приложение",
             connect_wallet: "Подключить кошелек",
+            twitter_btn: "Твиттер",
             about_title: "Cute_cat — мемкоин-экосистема",
             about_text: "Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.",
-            buy_title: "Приобретение CUCAT",
-            choose_currency: "Выберите валюту для раннего доступа / пресейла:",
+            ai_blockchain: "Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.",
+            presale_title: "Участие в пресейле",
             listing_date_msg: "📅 Свободная продажа (листинг) запланирована на 01.12.2026.",
-            early_access_msg: "✨ Токен можно получить и раньше! Следите за новостями и участвуйте в амбассадорской программе, чтобы попасть в число ранних холдеров по специальной цене 0,5 USDT за токен.",
+            early_access_msg: "✨ Токен можно получить раньше! Оставьте заявку ниже, чтобы участвовать в пресейле со скидкой 50% от цены листинга (0.5 USDT за токен вместо 1 USDT).",
             revenue_info: "Выручка от продажи токенов пойдет на доработку приложения, маркетинг, поощрение ранних пользователей и благотворительные инициативы, чтобы в мире было больше котиков для поглаживания.",
+            presale_form_title: "Заявка на пресейл (скидка 50%)",
             tokenomics_title: "Токеномика CUCAT",
             total_supply: "Общее предложение:",
             category: "Категория",
@@ -482,9 +507,11 @@
             footer_txt: "© 2025 CUCAT ecosystem",
             name_placeholder: "Ваше имя / Nickname",
             telegram_placeholder: "Telegram @username или телефон",
+            tokens_placeholder: "Количество токенов (мин 100) — по 0.5 USDT",
             org_name_placeholder: "Ваше имя / Название организации",
             email_placeholder: "Email для ответа",
-            proposal_placeholder: "Ваше предложение: идеи помощи котикам или коллаборация"
+            proposal_placeholder: "Ваше предложение: идеи помощи котикам или коллаборация",
+            send_presale: "Отправить заявку на пресейл"
         }
     };
 
@@ -506,7 +533,7 @@
     document.getElementById('langEnBtn').addEventListener('click', () => updateLanguage('en'));
     document.getElementById('langRuBtn').addEventListener('click', () => updateLanguage('ru'));
 
-    // кошелек (без изменений)
+    // кошелек
     document.getElementById('connectWalletBtn').addEventListener('click', () => {
         const choice = confirm("🔌 Choose wallet connection:\nOK → MetaMask\nCancel → WalletConnect");
         if (choice) {
@@ -522,7 +549,27 @@
         }
     });
 
-    // формы отправки
+    // пресейл форма
+    const presaleForm = document.getElementById('presaleForm');
+    const presaleMsg = document.getElementById('presaleMsg');
+    presaleForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('presaleName').value.trim();
+        const tg = document.getElementById('presaleTelegram').value.trim();
+        const amount = document.getElementById('presaleAmount').value.trim();
+        if(!name || !tg || !amount || parseInt(amount) < 100) {
+            presaleMsg.innerHTML = "<span style='color:#d9534f'>❌ " + (currentLang === 'en' ? "Please fill all fields correctly (min 100 tokens)" : "Заполните все поля корректно (мин 100 токенов)") + "</span>";
+            return;
+        }
+        const subject = `Presale request: ${name} wants ${amount} CUCAT`;
+        const body = `Name: ${name}\nTelegram: ${tg}\nDesired tokens: ${amount} CUCAT (50% discount price: ${amount * 0.5} USDT total)\n\nPlease contact with payment details.`;
+        window.location.href = `mailto:jabonijerry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        presaleMsg.innerHTML = "<span style='color:#4cae4c'>✅ " + (currentLang === 'en' ? "Presale request sent! We'll contact you." : "Заявка на пресейл отправлена! Мы свяжемся.") + "</span>";
+        presaleForm.reset();
+        setTimeout(()=> presaleMsg.innerHTML = "", 5000);
+    });
+
+    // амбассадор форма
     const ambassadorForm = document.getElementById('ambassadorForm');
     const ambMsg = document.getElementById('ambMsg');
     ambassadorForm.addEventListener('submit', (e) => {
@@ -541,6 +588,7 @@
         setTimeout(()=> ambMsg.innerHTML = "", 4000);
     });
 
+    // коллаборации форма
     const collabForm = document.getElementById('collabForm');
     const collabMsg = document.getElementById('collabMsg');
     collabForm.addEventListener('submit', (e) => {
