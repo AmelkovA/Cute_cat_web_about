@@ -140,14 +140,15 @@
         }
         .social-btn {
             background: #e1e8f0;
-            color: #1DA1F2;
+            color: #000000;
             gap: 8px;
         }
         .social-btn i {
             font-size: 1.3rem;
+            font-weight: 900;
         }
         .social-btn:hover {
-            background: #1DA1F2;
+            background: #000000;
             color: white;
             transform: scale(0.97);
         }
@@ -271,11 +272,11 @@
         }
         .footer-social a {
             color: #b56f88;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             transition: 0.2s;
         }
         .footer-social a:hover {
-            color: #1DA1F2;
+            color: #000000;
             transform: scale(1.1);
         }
         @media (max-width: 800px) {
@@ -302,20 +303,25 @@
             flex: 1;
             min-width: 260px;
         }
+        /* иконка X через Font Awesome (fa-x-twitter) если поддерживается, либо кастом */
+        .fa-x-twitter {
+            font-family: 'Font Awesome 6 Brands';
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- HEADER с добавленной кнопкой Twitter -->
+    <!-- HEADER с кнопкой X (новый логотип) -->
     <div class="header">
         <div class="left-group">
             <a href="https://amelkova.github.io/Cute_cat_web/" target="_blank" class="btn-app"><i class="fas fa-cat"></i> <span data-key="app_btn">App</span></a>
             <button id="langEnBtn" class="lang-btn active">🇬🇧 EN</button>
             <button id="langRuBtn" class="lang-btn">🇷🇺 RU</button>
             <button id="connectWalletBtn" class="wallet-btn"><i class="fas fa-wallet"></i> <span data-key="connect_wallet">Connect wallet</span></button>
-            <!-- ВИДИМАЯ КНОПКА TWITTER / X -->
-            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" class="social-btn"><i class="fab fa-twitter"></i> <span data-key="twitter_btn">Twitter</span></a>
+            <!-- КНОПКА X (новый логотип) -->
+            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" class="social-btn"><i class="fab fa-x-twitter"></i> <span data-key="x_btn">X</span></a>
         </div>
         <div class="logo-area">
             <div class="cat-logo"><i class="fas fa-cat"></i></div>
@@ -323,14 +329,14 @@
         </div>
     </div>
 
-    <!-- ОПИСАНИЕ ПРОЕКТА (с добавлением про ИИ, блокчейн и доброту котиков) -->
+    <!-- ОПИСАНИЕ ПРОЕКТА -->
     <div class="card">
         <h2><i class="fas fa-paw"></i> <span data-key="about_title">Cute_cat — мемкоин-экосистема</span></h2>
         <p data-key="about_text">Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.</p>
         <p style="margin-top: 1rem; background: #ffeef4; padding: 1rem; border-radius: 40px;"><i class="fas fa-robot"></i> <strong data-key="ai_blockchain">Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.</strong></p>
     </div>
 
-    <!-- БЛОК ПРЕСЕЙЛА: форма заявки на участие в пресейле -->
+    <!-- БЛОК ПРЕСЕЙЛА -->
     <div class="card">
         <h2><i class="fas fa-rocket"></i> <span data-key="presale_title">Early presale participation</span></h2>
         <div class="two-columns">
@@ -364,7 +370,7 @@
         </div>
     </div>
 
-    <!-- ТОКЕНОМИКА (общее предложение 1 000 000 000) -->
+    <!-- ТОКЕНОМИКА -->
     <div class="card">
         <h2><i class="fas fa-chart-pie"></i> <span data-key="tokenomics_title">Tokenomics CUCAT</span></h2>
         <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000 Cute_cat (CUCAT)</strong> <span style="font-size:0.9rem;">(one billion)</span></p>
@@ -393,7 +399,7 @@
         <div id="ambMsg" style="margin-top:16px; color:#bc5f7e; font-size:1rem;"></div>
     </div>
 
-    <!-- ПРЕДЛОЖЕНИЯ ПОМОЩИ КОТИКАМ / КОЛЛАБОРАЦИИ -->
+    <!-- ПРЕДЛОЖЕНИЯ ПОМОЩИ КОТИКАМ -->
     <div class="card">
         <h2><i class="fas fa-hand-holding-heart"></i> <span data-key="collab_title">🐱 Help cats & collaborations</span></h2>
         <p data-key="collab_desc">We accept proposals for collaborations with foundations, shelters, organizations that help cats. Together we can make the world kinder! Suggest an idea, partnership or a way to support cats.</p>
@@ -406,7 +412,7 @@
         <div id="collabMsg" style="margin-top:16px;"></div>
     </div>
 
-    <!-- РАЗДЕЛ ПОДДЕРЖАТЬ ПРОЕКТ -->
+    <!-- ПОДДЕРЖАТЬ ПРОЕКТ -->
     <div class="support-section">
         <i class="fas fa-heart" style="color:#ff8aa8; font-size:1.6rem;"></i> 
         <h3 style="font-size:1.7rem; margin:0.5rem 0 0.3rem;"><span data-key="support_title">🐾 Support Cute_cat project</span></h3>
@@ -422,7 +428,7 @@
 
     <footer>
         <div class="footer-social">
-            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
         </div>
         <div><i class="fas fa-cat"></i> Cute_cat — pet a cat, be happy 🐾  <span data-key="footer_txt">© 2025 CUCAT ecosystem</span></div>
     </footer>
@@ -434,7 +440,7 @@
         en: {
             app_btn: "App",
             connect_wallet: "Connect wallet",
-            twitter_btn: "Twitter",
+            x_btn: "X",
             about_title: "Cute_cat — meme coin ecosystem",
             about_text: "Cute_cat is a meme coin ecosystem built around cat petting culture, emotional comfort, and digital pleasure. Our mission is to develop the habit of petting cats as a simple, natural, and enjoyable ritual that improves human well-being and creates a positive user experience.",
             ai_blockchain: "Cute_cat is a project that uses artificial intelligence, blockchain technology, and cat kindness to make the world a better place.",
@@ -475,7 +481,7 @@
         ru: {
             app_btn: "Приложение",
             connect_wallet: "Подключить кошелек",
-            twitter_btn: "Твиттер",
+            x_btn: "X",
             about_title: "Cute_cat — мемкоин-экосистема",
             about_text: "Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.",
             ai_blockchain: "Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.",
