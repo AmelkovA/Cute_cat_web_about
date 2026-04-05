@@ -4,39 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Cute Cat — CUCAT | Мемкоин экосистема</title>
-    <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: #fff5f8;
             color: #2a1c22;
-            scroll-behavior: smooth;
             font-size: 20px;
             line-height: 1.55;
             position: relative;
         }
-
-        /* фон с котиками */
         body::before {
             content: "🐱 🐈 🐾 🐱 🐈 🐾 🐱 🐈 🐾 🐱 🐈 🐾 🐱";
             font-size: 180px;
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
+            inset: 0;
             pointer-events: none;
             color: rgba(255, 140, 170, 0.07);
             white-space: pre;
-            overflow: hidden;
             z-index: 0;
             display: flex;
             flex-wrap: wrap;
@@ -44,9 +31,7 @@
             opacity: 0.55;
             letter-spacing: 40px;
             line-height: 1.8;
-            text-align: center;
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -54,19 +39,11 @@
             position: relative;
             z-index: 2;
         }
-
-        p, li, .info-note, .form-group input, .form-group textarea, .currency-select, .support-section p, .support-address {
+        p, li, .info-note, .form-group input, .form-group textarea, .support-section p, .support-address {
             font-size: 1.15rem;
         }
-        h2 {
-            font-size: 2.6rem;
-            margin-bottom: 1.2rem;
-            letter-spacing: -0.01em;
-        }
-        h3 {
-            font-size: 1.9rem;
-            margin: 1rem 0 0.8rem;
-        }
+        h2 { font-size: 2.6rem; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+        h3 { font-size: 1.9rem; margin: 1rem 0 0.8rem; }
         .card {
             background: rgba(255, 250, 252, 0.94);
             backdrop-filter: blur(4px);
@@ -75,10 +52,7 @@
             margin-bottom: 2.8rem;
             box-shadow: 0 24px 42px rgba(255, 80, 120, 0.12);
             border: 1px solid #ffe4ed;
-            transition: 0.2s;
         }
-
-        /* header */
         .header {
             display: flex;
             justify-content: space-between;
@@ -93,14 +67,7 @@
             box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
             border: 1px solid #ffc0d0;
         }
-
-        .left-group {
-            display: flex;
-            gap: 1.3rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
+        .left-group { display: flex; gap: 1.3rem; align-items: center; flex-wrap: wrap; }
         .btn-app, .lang-btn, .wallet-btn, .social-btn {
             border: none;
             background: white;
@@ -110,80 +77,32 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             font-family: inherit;
         }
-
-        .btn-app {
-            background: #ff8aa8;
-            color: white;
-        }
-        .btn-app:hover {
-            background: #ff6b92;
-            transform: scale(0.97);
-        }
-        .lang-btn {
-            background: #ffe2ec;
-            color: #b15474;
-        }
-        .lang-btn.active {
-            background: #ff8aa8;
-            color: white;
-        }
-        .wallet-btn {
-            background: #ffe0b5;
-            color: #a54f2c;
-        }
-        .social-btn {
-            background: #e1e8f0;
-            color: #000000;
-            gap: 8px;
-        }
-        .social-btn i {
-            font-size: 1.3rem;
-            font-weight: 900;
-        }
-        .social-btn:hover {
-            background: #000000;
-            color: white;
-            transform: scale(0.97);
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .btn-app { background: #ff8aa8; color: white; }
+        .lang-btn { background: #ffe2ec; color: #b15474; }
+        .lang-btn.active { background: #ff8aa8; color: white; }
+        .wallet-btn { background: #ffe0b5; color: #a54f2c; }
+        .social-btn { background: #e1e8f0; color: #000; gap: 8px; }
+        .social-btn:hover { background: #000; color: white; transform: scale(0.97); }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
         .cat-logo {
-            width: 70px;
-            height: 70px;
-            background: #ffdbe6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.2rem;
-            box-shadow: 0 6px 14px #ffb7cb;
+            width: 70px; height: 70px; background: #ffdbe6; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.2rem; box-shadow: 0 6px 14px #ffb7cb;
         }
         .project-name {
-            font-weight: 900;
-            font-size: 2rem;
+            font-weight: 900; font-size: 2rem;
             background: linear-gradient(135deg, #e65c7b, #b83b5e);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-
-        .presale-form {
-            margin-top: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 1.6rem;
-        }
-        input, textarea, select {
+        .presale-form { margin-top: 1.5rem; }
+        .form-group { margin-bottom: 1.6rem; }
+        input, textarea {
             width: 100%;
             padding: 1rem 1.6rem;
             border-radius: 60px;
@@ -192,93 +111,39 @@
             font-family: inherit;
             font-size: 1.05rem;
         }
-        textarea {
-            border-radius: 32px;
-            resize: vertical;
-        }
+        textarea { border-radius: 32px; resize: vertical; }
         button.submit-btn {
-            background: #ff8aa8;
-            border: none;
-            padding: 1rem 2.2rem;
-            border-radius: 60px;
-            font-weight: bold;
-            color: white;
-            font-size: 1.15rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            background: #ff8aa8; border: none; padding: 1rem 2.2rem;
+            border-radius: 60px; font-weight: bold; color: white; font-size: 1.15rem;
+            cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px;
         }
+        button.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .info-note {
-            background: #fff0f3;
-            border-radius: 40px;
-            padding: 1.3rem 1.8rem;
-            margin: 1.2rem 0;
-            font-size: 1.1rem;
-            border-left: 6px solid #ff9eb6;
+            background: #fff0f3; border-radius: 40px; padding: 1.3rem 1.8rem;
+            margin: 1.2rem 0; font-size: 1.1rem; border-left: 6px solid #ff9eb6;
         }
         .tokenomics-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fffbfc;
-            border-radius: 32px;
-            overflow: hidden;
-            font-size: 1.1rem;
+            width: 100%; border-collapse: collapse; background: #fffbfc;
+            border-radius: 32px; overflow: hidden; font-size: 1.1rem;
         }
         .tokenomics-table th, .tokenomics-table td {
-            padding: 18px 14px;
-            text-align: left;
-            border-bottom: 1px solid #ffe2ea;
+            padding: 18px 14px; text-align: left; border-bottom: 1px solid #ffe2ea;
         }
         .support-section {
-            margin-top: 2rem;
-            text-align: center;
-            background: rgba(255, 240, 245, 0.85);
-            border-radius: 56px;
-            padding: 1.8rem 2rem;
-            border: 1px solid #ffd0dc;
-        }
-        .support-section p {
-            font-size: 0.95rem;
-            margin: 0.5rem 0;
+            margin-top: 2rem; text-align: center; background: rgba(255, 240, 245, 0.85);
+            border-radius: 56px; padding: 1.8rem 2rem; border: 1px solid #ffd0dc;
         }
         .support-address {
-            font-family: monospace;
-            font-size: 0.85rem;
-            word-break: break-all;
-            background: #fff2f6;
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            border-radius: 40px;
-            margin: 0.3rem;
-            font-weight: 500;
+            font-family: monospace; font-size: 0.85rem; word-break: break-all;
+            background: #fff2f6; display: inline-block; padding: 0.4rem 1rem;
+            border-radius: 40px; margin: 0.3rem; font-weight: 500;
         }
         footer {
-            text-align: center;
-            padding: 2rem 1rem 1rem;
-            color: #b56f88;
-            font-size: 0.9rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
+            text-align: center; padding: 2rem 1rem 1rem; color: #b56f88;
+            display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
         }
-        .footer-social {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-        .footer-social a {
-            color: #b56f88;
-            font-size: 1.8rem;
-            transition: 0.2s;
-        }
-        .footer-social a:hover {
-            color: #000000;
-            transform: scale(1.1);
-        }
+        .footer-social a { color: #b56f88; font-size: 1.8rem; transition: 0.2s; margin: 0 0.5rem; }
+        .footer-social a:hover { color: #000; transform: scale(1.1); }
         @media (max-width: 800px) {
             .container { padding: 1.2rem; }
             body { font-size: 18px; }
@@ -288,39 +153,20 @@
             .left-group { justify-content: center; }
             .logo-area { justify-content: center; }
         }
-        .highlight {
-            background: #ffe0b3;
-            border-radius: 30px;
-            padding: 0.2rem 0.6rem;
-            font-weight: bold;
-        }
-        .two-columns {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .two-columns > div {
-            flex: 1;
-            min-width: 260px;
-        }
-        /* иконка X через Font Awesome (fa-x-twitter) если поддерживается, либо кастом */
-        .fa-x-twitter {
-            font-family: 'Font Awesome 6 Brands';
-            font-weight: 400;
-        }
+        .two-columns { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .two-columns > div { flex: 1; min-width: 260px; }
+        .success-message { background: #e8f5e9; color: #2e7d32; padding: 0.8rem; border-radius: 40px; margin-top: 1rem; text-align: center; }
+        .error-message { background: #ffebee; color: #c62828; padding: 0.8rem; border-radius: 40px; margin-top: 1rem; text-align: center; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <!-- HEADER с кнопкой X (новый логотип) -->
     <div class="header">
         <div class="left-group">
             <a href="https://amelkova.github.io/Cute_cat_web/" target="_blank" class="btn-app"><i class="fas fa-cat"></i> <span data-key="app_btn">App</span></a>
             <button id="langEnBtn" class="lang-btn active">🇬🇧 EN</button>
             <button id="langRuBtn" class="lang-btn">🇷🇺 RU</button>
             <button id="connectWalletBtn" class="wallet-btn"><i class="fas fa-wallet"></i> <span data-key="connect_wallet">Connect wallet</span></button>
-            <!-- КНОПКА X (новый логотип) -->
             <a href="https://x.com/Cute_cat_ai_mem" target="_blank" class="social-btn"><i class="fab fa-x-twitter"></i> <span data-key="x_btn">X</span></a>
         </div>
         <div class="logo-area">
@@ -329,14 +175,12 @@
         </div>
     </div>
 
-    <!-- ОПИСАНИЕ ПРОЕКТА -->
     <div class="card">
         <h2><i class="fas fa-paw"></i> <span data-key="about_title">Cute_cat — мемкоин-экосистема</span></h2>
         <p data-key="about_text">Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.</p>
         <p style="margin-top: 1rem; background: #ffeef4; padding: 1rem; border-radius: 40px;"><i class="fas fa-robot"></i> <strong data-key="ai_blockchain">Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.</strong></p>
     </div>
 
-    <!-- БЛОК ПРЕСЕЙЛА -->
     <div class="card">
         <h2><i class="fas fa-rocket"></i> <span data-key="presale_title">Early presale participation</span></h2>
         <div class="two-columns">
@@ -353,29 +197,22 @@
                 <div class="presale-form">
                     <h3 style="margin-top:0;"><i class="fas fa-pen-alt"></i> <span data-key="presale_form_title">Apply for presale (50% discount)</span></h3>
                     <form id="presaleForm">
-                        <div class="form-group">
-                            <input type="text" id="presaleName" placeholder="Your name / Имя" data-placeholder-key="name_placeholder" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="presaleTelegram" placeholder="Telegram @username or phone / ник в Telegram" data-placeholder-key="telegram_placeholder" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" id="presaleAmount" placeholder="Number of tokens you want to purchase (min 100) / Количество токенов" data-placeholder-key="tokens_placeholder" min="100" step="100" required>
-                        </div>
-                        <button type="submit" class="submit-btn"><i class="fas fa-ticket-alt"></i> <span data-key="send_presale">Send presale request</span></button>
+                        <div class="form-group"><input type="text" id="presaleName" placeholder="Your name / Имя" data-placeholder-key="name_placeholder" required></div>
+                        <div class="form-group"><input type="text" id="presaleTelegram" placeholder="Telegram @username or phone / ник в Telegram" data-placeholder-key="telegram_placeholder" required></div>
+                        <div class="form-group"><input type="number" id="presaleAmount" placeholder="Number of tokens (min 100) / Количество токенов (мин 100)" data-placeholder-key="tokens_placeholder" min="100" step="100" required></div>
+                        <button type="submit" class="submit-btn" id="presaleSubmitBtn"><i class="fas fa-ticket-alt"></i> <span data-key="send_presale">Send presale request</span></button>
                     </form>
-                    <div id="presaleMsg" style="margin-top:16px; font-size:0.9rem;"></div>
+                    <div id="presaleMsg"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ТОКЕНОМИКА -->
     <div class="card">
         <h2><i class="fas fa-chart-pie"></i> <span data-key="tokenomics_title">Tokenomics CUCAT</span></h2>
-        <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000 Cute_cat (CUCAT)</strong> <span style="font-size:0.9rem;">(one billion)</span></p>
+        <p><strong><span data-key="total_supply">Total supply:</span> 1,000,000,000 Cute_cat (CUCAT)</strong></p>
         <table class="tokenomics-table">
-            <thead><tr><th><span data-key="category">Category</span></th><th><span data-key="percent">Percent</span></th><th><span data-key="purpose">Purpose</span></th></tr></thead>
+            <thead><tr><th data-key="category">Category</th><th data-key="percent">Percent</th><th data-key="purpose">Purpose</th></tr></thead>
             <tbody>
                 <tr><td>Community & Rewards</td><td>25%</td><td data-key="comm_desc">User rewards, missions, activity, retention</td></tr>
                 <tr><td>Liquidity</td><td>20%</td><td data-key="liq_desc">Liquidity and market stability</td></tr>
@@ -387,19 +224,17 @@
         </table>
     </div>
 
-    <!-- АМБАССАДОРСКАЯ ПРОГРАММА -->
     <div class="card">
         <h2><i class="fas fa-user-friends"></i> <span data-key="ambassador_title">🐾 Ambassador program — become part of Cute_cat</span></h2>
         <p data-key="ambassador_text">Join the team! After the program starts, we'll add participants to a private channel with tasks and rewards. Early ambassadors will get access to token purchase before listing at the special price of 0.5 USDT.</p>
         <form id="ambassadorForm">
             <div class="form-group"><input type="text" id="ambName" placeholder="Your name / Nickname" data-placeholder-key="name_placeholder" required></div>
             <div class="form-group"><input type="text" id="ambTelegram" placeholder="Telegram @username or phone number" data-placeholder-key="telegram_placeholder" required></div>
-            <button type="submit" class="submit-btn"><i class="fab fa-telegram"></i> <span data-key="send_ambassador">Send application</span></button>
+            <button type="submit" class="submit-btn" id="ambSubmitBtn"><i class="fab fa-telegram"></i> <span data-key="send_ambassador">Send application</span></button>
         </form>
-        <div id="ambMsg" style="margin-top:16px; color:#bc5f7e; font-size:1rem;"></div>
+        <div id="ambMsg"></div>
     </div>
 
-    <!-- ПРЕДЛОЖЕНИЯ ПОМОЩИ КОТИКАМ -->
     <div class="card">
         <h2><i class="fas fa-hand-holding-heart"></i> <span data-key="collab_title">🐱 Help cats & collaborations</span></h2>
         <p data-key="collab_desc">We accept proposals for collaborations with foundations, shelters, organizations that help cats. Together we can make the world kinder! Suggest an idea, partnership or a way to support cats.</p>
@@ -407,17 +242,16 @@
             <div class="form-group"><input type="text" id="collabName" placeholder="Your name / Organization name" data-placeholder-key="org_name_placeholder" required></div>
             <div class="form-group"><input type="email" id="collabEmail" placeholder="Email for reply" data-placeholder-key="email_placeholder" required></div>
             <div class="form-group"><textarea rows="3" id="collabMessage" placeholder="Your proposal: ideas to help cats or collaboration" data-placeholder-key="proposal_placeholder" required></textarea></div>
-            <button type="submit" class="submit-btn"><i class="fas fa-envelope"></i> <span data-key="send_proposal">Send proposal</span></button>
+            <button type="submit" class="submit-btn" id="collabSubmitBtn"><i class="fas fa-envelope"></i> <span data-key="send_proposal">Send proposal</span></button>
         </form>
-        <div id="collabMsg" style="margin-top:16px;"></div>
+        <div id="collabMsg"></div>
     </div>
 
-    <!-- ПОДДЕРЖАТЬ ПРОЕКТ -->
     <div class="support-section">
-        <i class="fas fa-heart" style="color:#ff8aa8; font-size:1.6rem;"></i> 
+        <i class="fas fa-heart" style="color:#ff8aa8; font-size:1.6rem;"></i>
         <h3 style="font-size:1.7rem; margin:0.5rem 0 0.3rem;"><span data-key="support_title">🐾 Support Cute_cat project</span></h3>
         <p data-key="support_text">If you want to help develop the ecosystem, support cat shelters, or just treat the team — any help matters. Funds go to development, charity initiatives, and cat care 🐈</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin: 1rem 0 0.5rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin: 1rem 0;">
             <span class="support-address"><strong>BTC:</strong> bc1qe8p9gqqvn8e3yfhjxkusvc0phnflznpzprqd8f</span>
             <span class="support-address"><strong>ETH/BSC:</strong> 0x8C8fa7F22b88845c0Ec54BAF2d3d8d82BDd4C84b</span>
             <span class="support-address"><strong>SOL:</strong> 8RU4kt7kwH4eLqgq8RAvwUDj46hUBFFH9MPSiw999gwB</span>
@@ -427,20 +261,15 @@
     </div>
 
     <footer>
-        <div class="footer-social">
-            <a href="https://x.com/Cute_cat_ai_mem" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        </div>
-        <div><i class="fas fa-cat"></i> Cute_cat — pet a cat, be happy 🐾  <span data-key="footer_txt">© 2025 CUCAT ecosystem</span></div>
+        <div class="footer-social"><a href="https://x.com/Cute_cat_ai_mem" target="_blank"><i class="fab fa-x-twitter"></i></a></div>
+        <div><i class="fas fa-cat"></i> Cute_cat — pet a cat, be happy 🐾 <span data-key="footer_txt">© 2025 CUCAT ecosystem</span></div>
     </footer>
 </div>
 
 <script>
-    // ---------- ПЕРЕВОДЫ (EN / RU) ----------
     const translations = {
         en: {
-            app_btn: "App",
-            connect_wallet: "Connect wallet",
-            x_btn: "X",
+            app_btn: "App", connect_wallet: "Connect wallet", x_btn: "X",
             about_title: "Cute_cat — meme coin ecosystem",
             about_text: "Cute_cat is a meme coin ecosystem built around cat petting culture, emotional comfort, and digital pleasure. Our mission is to develop the habit of petting cats as a simple, natural, and enjoyable ritual that improves human well-being and creates a positive user experience.",
             ai_blockchain: "Cute_cat is a project that uses artificial intelligence, blockchain technology, and cat kindness to make the world a better place.",
@@ -451,9 +280,7 @@
             presale_form_title: "Apply for presale (50% discount)",
             tokenomics_title: "Tokenomics CUCAT",
             total_supply: "Total supply:",
-            category: "Category",
-            percent: "Percent",
-            purpose: "Purpose",
+            category: "Category", percent: "Percent", purpose: "Purpose",
             comm_desc: "User rewards, missions, activity, retention",
             liq_desc: "Liquidity and market stability",
             mkt_desc: "Influencers, campaigns, viral growth",
@@ -476,12 +303,15 @@
             org_name_placeholder: "Your name / Organization name",
             email_placeholder: "Email for reply",
             proposal_placeholder: "Your proposal: ideas to help cats or collaboration",
-            send_presale: "Send presale request"
+            send_presale: "Send presale request",
+            sending: "Sending...",
+            success_presale: "✓ Presale request sent! We'll contact you shortly.",
+            success_amb: "✓ Application sent! We'll contact you.",
+            success_collab: "✓ Proposal sent! Thank you for supporting cats.",
+            error_msg: "❌ Something went wrong. Please try again."
         },
         ru: {
-            app_btn: "Приложение",
-            connect_wallet: "Подключить кошелек",
-            x_btn: "X",
+            app_btn: "Приложение", connect_wallet: "Подключить кошелек", x_btn: "X",
             about_title: "Cute_cat — мемкоин-экосистема",
             about_text: "Cute_cat — это мемкоин-экосистема, построенная вокруг культуры поглаживания котиков, эмоционального комфорта и цифрового удовольствия. Наша миссия — развивать привычку к поглаживанию котиков как к простому, естественному и приятному ритуалу, который улучшает самочувствие человека и создаёт позитивный пользовательский опыт.",
             ai_blockchain: "Cute_cat — это проект, который с помощью технологий искусственного интеллекта, блокчейна и доброты котиков делает мир лучше.",
@@ -492,9 +322,7 @@
             presale_form_title: "Заявка на пресейл (скидка 50%)",
             tokenomics_title: "Токеномика CUCAT",
             total_supply: "Общее предложение:",
-            category: "Категория",
-            percent: "Процент",
-            purpose: "Назначение",
+            category: "Категория", percent: "Процент", purpose: "Назначение",
             comm_desc: "Награды пользователям, миссии, активность, удержание",
             liq_desc: "Ликвидность и стабильность рынка",
             mkt_desc: "Инфлюенсеры, кампании, вирусный рост",
@@ -517,7 +345,12 @@
             org_name_placeholder: "Ваше имя / Название организации",
             email_placeholder: "Email для ответа",
             proposal_placeholder: "Ваше предложение: идеи помощи котикам или коллаборация",
-            send_presale: "Отправить заявку на пресейл"
+            send_presale: "Отправить заявку на пресейл",
+            sending: "Отправка...",
+            success_presale: "✓ Заявка на пресейл отправлена! Мы свяжемся с вами.",
+            success_amb: "✓ Заявка отправлена! Мы свяжемся с вами.",
+            success_collab: "✓ Предложение отправлено! Спасибо за поддержку котиков.",
+            error_msg: "❌ Ошибка при отправке. Попробуйте еще раз."
         }
     };
 
@@ -526,93 +359,109 @@
         currentLang = lang;
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.getAttribute('data-key');
-            if(translations[lang][key]) el.innerText = translations[lang][key];
+            if (translations[lang][key]) el.innerText = translations[lang][key];
         });
         document.querySelectorAll('[data-placeholder-key]').forEach(el => {
             const key = el.getAttribute('data-placeholder-key');
-            if(translations[lang][key]) el.placeholder = translations[lang][key];
+            if (translations[lang][key]) el.placeholder = translations[lang][key];
         });
         document.getElementById('langEnBtn').classList.toggle('active', lang === 'en');
         document.getElementById('langRuBtn').classList.toggle('active', lang === 'ru');
     }
     updateLanguage('en');
-    document.getElementById('langEnBtn').addEventListener('click', () => updateLanguage('en'));
-    document.getElementById('langRuBtn').addEventListener('click', () => updateLanguage('ru'));
+    document.getElementById('langEnBtn').onclick = () => updateLanguage('en');
+    document.getElementById('langRuBtn').onclick = () => updateLanguage('ru');
 
-    // кошелек
-    document.getElementById('connectWalletBtn').addEventListener('click', () => {
+    document.getElementById('connectWalletBtn').onclick = () => {
         const choice = confirm("🔌 Choose wallet connection:\nOK → MetaMask\nCancel → WalletConnect");
         if (choice) {
-            if (window.ethereum && window.ethereum.isMetaMask) {
-                window.ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-                    alert(`✅ MetaMask connected: ${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`);
-                }).catch(() => alert("❌ Connection rejected"));
-            } else {
-                alert("🦊 MetaMask not detected. Please install MetaMask or use WalletConnect.");
-            }
-        } else {
-            alert("🌐 WalletConnect modal (demo)");
-        }
-    });
+            if (window.ethereum?.isMetaMask) {
+                window.ethereum.request({ method: 'eth_requestAccounts' })
+                    .then(accounts => alert(`✅ Connected: ${accounts[0].slice(0,6)}...`))
+                    .catch(() => alert("Rejected"));
+            } else alert("🦊 MetaMask not detected");
+        } else alert("🌐 WalletConnect demo");
+    };
 
-    // пресейл форма
+    async function sendForm(formData, type) {
+        try {
+            const res = await fetch('https://formsubmit.co/ajax/jabonijerry@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            return res.ok;
+        } catch { return false; }
+    }
+
     const presaleForm = document.getElementById('presaleForm');
     const presaleMsg = document.getElementById('presaleMsg');
-    presaleForm.addEventListener('submit', (e) => {
+    presaleForm.onsubmit = async (e) => {
         e.preventDefault();
         const name = document.getElementById('presaleName').value.trim();
         const tg = document.getElementById('presaleTelegram').value.trim();
         const amount = document.getElementById('presaleAmount').value.trim();
-        if(!name || !tg || !amount || parseInt(amount) < 100) {
-            presaleMsg.innerHTML = "<span style='color:#d9534f'>❌ " + (currentLang === 'en' ? "Please fill all fields correctly (min 100 tokens)" : "Заполните все поля корректно (мин 100 токенов)") + "</span>";
+        if (!name || !tg || !amount || parseInt(amount) < 100) {
+            presaleMsg.innerHTML = `<div class="error-message">${currentLang === 'en' ? '❌ Min 100 tokens, all fields required' : '❌ Мин 100 токенов, все поля обязательны'}</div>`;
             return;
         }
-        const subject = `Presale request: ${name} wants ${amount} CUCAT`;
-        const body = `Name: ${name}\nTelegram: ${tg}\nDesired tokens: ${amount} CUCAT (50% discount price: ${amount * 0.5} USDT total)\n\nPlease contact with payment details.`;
-        window.location.href = `mailto:jabonijerry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        presaleMsg.innerHTML = "<span style='color:#4cae4c'>✅ " + (currentLang === 'en' ? "Presale request sent! We'll contact you." : "Заявка на пресейл отправлена! Мы свяжемся.") + "</span>";
-        presaleForm.reset();
-        setTimeout(()=> presaleMsg.innerHTML = "", 5000);
-    });
+        const btn = document.getElementById('presaleSubmitBtn');
+        btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> ${translations[currentLang].sending}`;
+        const ok = await sendForm({
+            _subject: `[CuteCat Presale] ${name}`,
+            name, telegram: tg, tokens: amount,
+            message: `Presale request: ${name} (${tg}) wants ${amount} CUCAT → ${amount*0.5} USDT`
+        }, 'presale');
+        if (ok) {
+            presaleMsg.innerHTML = `<div class="success-message">${translations[currentLang].success_presale}</div>`;
+            presaleForm.reset();
+        } else presaleMsg.innerHTML = `<div class="error-message">${translations[currentLang].error_msg}</div>`;
+        btn.disabled = false; btn.innerHTML = `<i class="fas fa-ticket-alt"></i> ${translations[currentLang].send_presale}`;
+        setTimeout(() => presaleMsg.innerHTML = '', 5000);
+    };
 
-    // амбассадор форма
-    const ambassadorForm = document.getElementById('ambassadorForm');
-    const ambMsg = document.getElementById('ambMsg');
-    ambassadorForm.addEventListener('submit', (e) => {
+    const ambForm = document.getElementById('ambassadorForm');
+    const ambMsgDiv = document.getElementById('ambMsg');
+    ambForm.onsubmit = async (e) => {
         e.preventDefault();
         const name = document.getElementById('ambName').value.trim();
         const tg = document.getElementById('ambTelegram').value.trim();
-        if(!name || !tg) {
-            ambMsg.innerHTML = "<span style='color:#d9534f'>❌ " + (currentLang === 'en' ? "Please fill all fields" : "Заполните все поля") + "</span>";
+        if (!name || !tg) {
+            ambMsgDiv.innerHTML = `<div class="error-message">${currentLang === 'en' ? '❌ All fields required' : '❌ Все поля обязательны'}</div>`;
             return;
         }
-        const subject = `Ambassador request: ${name}`;
-        const body = `Name: ${name}\nTelegram: ${tg}\n\nAmbassador program Cute_cat`;
-        window.location.href = `mailto:jabonijerry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        ambMsg.innerHTML = "<span style='color:#4cae4c'>✅ " + (currentLang === 'en' ? "Application sent! We'll contact you." : "Заявка отправлена! Мы свяжемся.") + "</span>";
-        ambassadorForm.reset();
-        setTimeout(()=> ambMsg.innerHTML = "", 4000);
-    });
+        const btn = document.getElementById('ambSubmitBtn');
+        btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> ${translations[currentLang].sending}`;
+        const ok = await sendForm({ _subject: `[CuteCat Ambassador] ${name}`, name, telegram: tg, message: `Ambassador request from ${name} (${tg})` }, 'amb');
+        if (ok) {
+            ambMsgDiv.innerHTML = `<div class="success-message">${translations[currentLang].success_amb}</div>`;
+            ambForm.reset();
+        } else ambMsgDiv.innerHTML = `<div class="error-message">${translations[currentLang].error_msg}</div>`;
+        btn.disabled = false; btn.innerHTML = `<i class="fab fa-telegram"></i> ${translations[currentLang].send_ambassador}`;
+        setTimeout(() => ambMsgDiv.innerHTML = '', 5000);
+    };
 
-    // коллаборации форма
     const collabForm = document.getElementById('collabForm');
-    const collabMsg = document.getElementById('collabMsg');
-    collabForm.addEventListener('submit', (e) => {
+    const collabMsgDiv = document.getElementById('collabMsg');
+    collabForm.onsubmit = async (e) => {
         e.preventDefault();
         const name = document.getElementById('collabName').value.trim();
         const email = document.getElementById('collabEmail').value.trim();
-        const message = document.getElementById('collabMessage').value.trim();
-        if(!name || !email || !message) {
-            collabMsg.innerHTML = "<span style='color:#d9534f'>❌ " + (currentLang === 'en' ? "All fields required" : "Все поля обязательны") + "</span>";
+        const msg = document.getElementById('collabMessage').value.trim();
+        if (!name || !email || !msg) {
+            collabMsgDiv.innerHTML = `<div class="error-message">${currentLang === 'en' ? '❌ All fields required' : '❌ Все поля обязательны'}</div>`;
             return;
         }
-        const subject = `Collaboration / Help cats: ${name}`;
-        const body = `From: ${name}\nEmail: ${email}\nProposal:\n${message}`;
-        window.location.href = `mailto:jabonijerry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        collabMsg.innerHTML = "<span style='color:#4cae4c'>✅ " + (currentLang === 'en' ? "Proposal sent! Thank you for supporting cats." : "Предложение отправлено! Спасибо за поддержку котиков.") + "</span>";
-        collabForm.reset();
-        setTimeout(()=> collabMsg.innerHTML = "", 4000);
-    });
+        const btn = document.getElementById('collabSubmitBtn');
+        btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> ${translations[currentLang].sending}`;
+        const ok = await sendForm({ _subject: `[CuteCat Collab] ${name}`, name, email, message: msg }, 'collab');
+        if (ok) {
+            collabMsgDiv.innerHTML = `<div class="success-message">${translations[currentLang].success_collab}</div>`;
+            collabForm.reset();
+        } else collabMsgDiv.innerHTML = `<div class="error-message">${translations[currentLang].error_msg}</div>`;
+        btn.disabled = false; btn.innerHTML = `<i class="fas fa-envelope"></i> ${translations[currentLang].send_proposal}`;
+        setTimeout(() => collabMsgDiv.innerHTML = '', 5000);
+    };
 </script>
 </body>
 </html>
